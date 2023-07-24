@@ -1,3 +1,4 @@
+
 function App() {
     const [quotes, setQuotes] = React.useState([]);
     const [randomquotes, setRandomQuotes] = React.useState("");
@@ -41,15 +42,26 @@ function App() {
         setColor(colors[ranColorIndex])
 
     }
+    const styles = {
+        
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        padding: 10
+    }
 
+    const center = {
+        textAlign: "center"
+    }
 
     return (
         <div style={{ backgroundColor: color, minHeight: "100vh" }}>
-            <div className="container pt-5" >
+            <div className="container pt-5" style={styles}>
                 <div className="jumbotron">
-                    <div className="card" style={{ Color: color }}>
-                        <div className="header">Insiprational Quotes</div>
-                        <div className="card-body">
+                    <div className="card" >
+                        
+                        <div className="card-body" style={center}>
                             {randomquotes ? (
                                 <>
                                     <h5 className="card-title">- {randomquotes.author || "No Author"}</h5>
@@ -65,7 +77,7 @@ function App() {
                                     encodeURIComponent(
                                         '"' + randomquotes.text + '"' + randomquotes.author
                                     )
-                                } target="_blank" className="btn btn-warning">
+                                } target="_blank" className="btn" style={{Color: color}} >
                                     <i class="fa-brands fa-twitter"></i>
                                 </a>
                                 <a href={
@@ -77,6 +89,7 @@ function App() {
                                 } target="_blank" className="btn btn-danger">
                                     <i class="fa-brands fa-tumblr"></i>
                                 </a>
+                                
                             </div>
                         </div>
                     </div>
