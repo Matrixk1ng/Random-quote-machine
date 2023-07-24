@@ -2,7 +2,6 @@ function App() {
     const [quotes, setQuotes] = React.useState([]);
     const [randomquotes, setRandomQuotes] = React.useState("");
     const [color, setColor] = React.useState("#111")
-    const [counter, setCounter] = React.useState(0);
 
     React.useEffect(() => {
         async function fetchData() {
@@ -42,9 +41,6 @@ function App() {
         setColor(colors[ranColorIndex])
 
     }
-    const handleClick = () => {
-        setCounter(counter + 1);
-    }
 
 
     return (
@@ -81,9 +77,6 @@ function App() {
                                 } target="_blank" className="btn btn-danger">
                                     <i class="fa-brands fa-tumblr"></i>
                                 </a>
-                                <button onClick={handleClick} className="btn btn-warning">press</button>
-                                <p>{counter}</p>
-                                
                             </div>
                         </div>
                     </div>
